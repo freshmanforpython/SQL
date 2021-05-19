@@ -4,7 +4,10 @@
                 order by <用于排序的列名>)
 ```
 
-### DENSE_RANK() 创造新列，为order排名，且连续（eg. 1, 2, 2, 3而非4）
+### DENSE_RANK() 
+Dense_Rank: 创造新列，为order排名，且连续（eg. 1, 2, 2, 3而非4）
+Rank: 非连续, eg. 1, 2, 2, 4
+Row_Number: 按row前后顺序排列，eg. 1, 2, 3, 4
 ```
 DENSE_RANK() OVER (
     PARTITION BY <expression>[{,<expression>...}]
