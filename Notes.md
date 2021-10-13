@@ -176,3 +176,6 @@ having count(distinct student) >= 5
 3. 大部分需要group by 
 4. group by 1, 2 # the # of columns
 5. order by 1, 2 # the same as group by
+6. from subquery需要给table一个名字select p.project_id
+from (select project_id, count(employee_id) from project group by project_id order by count(employee_id) desc) p
+limit 1
