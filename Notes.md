@@ -173,3 +173,4 @@ from courses
 group by class
 having count(distinct student) >= 5
 ```
+3. 大部分需要group by 
