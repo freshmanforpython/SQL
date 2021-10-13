@@ -174,3 +174,5 @@ group by class
 having count(distinct student) >= 5
 ```
 3. 大部分需要group by 
+4. group by 1, 2 # the # of columns
+5. order by 1, 2 # the same as group by
