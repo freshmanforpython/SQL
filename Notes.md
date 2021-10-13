@@ -19,7 +19,13 @@ limit 1
 ```
 ## 2. Functions
 ### 2.1 SQL Aggregate 函数
-SQL Aggregate 函数计算从列中取得的值，返回一个单一的值。
+SQL Aggregate 函数计算从列中取得的值，返回一个单一的值。aggregate function可以算条件值
+’‘’
+select buyer_id
+from sales s left join product p on s.product_id = p.product_id
+group by buyer_id
+having sum(product_name='S8') > 0 and sum(product_name='iPhone') = 0
+‘’‘
 有用的 Aggregate 函数：
 
 AVG() - 返回平均值
