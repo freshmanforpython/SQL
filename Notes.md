@@ -112,7 +112,7 @@ LEAD语法：LEAD(<expression>[,offset[, default_value]]) OVER ( PARTITION BY (e
 #### 3.3 sum()
 
 ## 4. Join
-join/inner join: 可以用作self join
+join是inner join: 可以用作self join
 seat_id	free	seat_id	free
 ```
 select a.seat_id, a.free, b.seat_id, b.free
