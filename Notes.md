@@ -31,8 +31,11 @@ MIN() - 返回最小值
 SUM() - 返回总和
 
 ### 2.2 Date
-Datedif(大日期，小日期）
-adddate(column,number)增加几天
+SELECT DATEDIFF(year, '2017/08/25', '2011/08/25') AS DateDiff;
+SELECT DATEADD(year, 1, '2017/08/25') AS DateAdd; 增加year, day, month
+SELECT DAY('2017/08/25') AS DayOfMonth;
+SELECT GETDATE();
+ISDATE(expression)
 ##### Question 197. Rising Temperature
 ```
 select distinct b.id
