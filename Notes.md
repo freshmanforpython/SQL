@@ -101,6 +101,12 @@ ON e.DepartmentId=d.id
 WHERE (e.DepartmentId,e.salary) IN (SELECT e.Departmentid,MAX(e.Salary) FROM Employee e GROUP BY e.DepartmentId);
 ```
 
+##### Note
+窗口函数可以接受aggregate和原有的column，但是不能接受新命名的column
+seller_id, sum(price), RANK() OVER(ORDER BY sum(price) DESC) as r
+FROM Sales
+GROUP BY seller_id
+
 #### 3.2 lag() lead() lag向前，lead向后
 ```
 LAG语法：LAG(<expression>[,offset[, default_value]]) OVER ( PARTITION BY expr,... ORDER BY expr [ASC|DESC],... )
