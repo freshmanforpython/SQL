@@ -7,6 +7,19 @@ delete from person where id not in
 (select * from (
 select min(id) from person group by email) as p)
 ```
+### 几种删除 drop truncate delete
+1、drop (删除表)：删除内容和定义，释放空间。简单来说就是把整个表去掉。
+
+2、truncate (清空表中的数据)：删除内容、释放空间但不删除定义(保留表的数据结构)。与drop不同的是,他只是清空表数据而已。
+
+3、delete (删除表中的数据)：delete 语句用于删除表中的行。delete语句执行删除的过程是每次从表中删除一行，并且同时将该行的删除操作作为事务记录在日志中保存，以便进行进行rollback操作。
+
+   4、执行速度，一般来说: drop> truncate > delete。
+
+    truncate 是一个DDL语言，向其他所有的DDL语言一样，他将被隐式提交，不能对truncate 使用rollback命令。 
+
+附：rollback就是数据库里做修改后 （update，insert，delete）未commit 之前，使用rollback可以恢复数据到修改之前。
+
 
 ### 1.3 order by 可使用聚合函数
 #### Question 586. Customer Placing the Largest Number of Orders
